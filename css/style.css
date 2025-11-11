@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #333030a1;
+    color: #333;
+    line-height: 1.6;
+    background-image: url('../src/bgg.png');
+    background-size: cover;
+    background-position: center;
+    background-size: 100% 100% ;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.clear{
+    clear: both;
+}
+
+header{
+    background-color: #333;
+    color: #ffffff;
+    width: 100%;
+    height: 65px;
+    padding: 10px 0;
+}
+
+header h1{
+    float: left;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+header nav{
+    float: right;
+    margin-top: 20px;
+}
+
+header nav ul{
+    list-style: none;
+}
+
+header nav ul li{
+    display: inline;
+    margin-left: 20px;
+    margin-right: 10px;
+    gap: 15px;
+}
+
+header nav ul li a{
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover{
+    text-decoration: underline;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+    margin-top: 3%;
+    overflow: hidden;
+    padding: 20px 0;
+    height: 55vh;
+    background-image: url('../src/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-size: 100% 100% ;
+}
+
+.hero{
+    background: #e2e2e277;
+    border: solid 4px #00000029;
+    width: 90%;
+    padding: 30px;
+    margin-left: 5%;
+    text-align: center;
+}
+
+.hero h2{
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.hero p{
+    font-size: 20px;
+    color: white;
+}
+
+footer{
+    background-color: #33333383;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    position: relative;
+    bottom: -113px;
+}
+
+.container2{
+    width: 80%;
+    margin: auto;
+    margin-top: 1.8%;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.hero2{
+    display: flex;
+    gap: 4%;
+}
+
+.hero2 img{
+    width: 350px;
+    height: 450px;
+    border: solid 4px #00000029;
+}
+
+.hero2 h3{
+    font-size: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: white;
+    float: left;
+}
+
+.hero2 p{
+    font-size: 15px;
+    color: white;
+    text-align: justify;
+    float: right;
+}
+
+.hero2 .textos{
+    width: 60%;
+    background-color: #333333ab;
+    padding: 20px;
+}
+
+.f2{
+    background-color: #33333383;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    position: relative;
+    top: -12px;
+}
