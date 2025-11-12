@@ -42,6 +42,17 @@
                 window.history.back();
             });
 
+        document.querySelector('.textos')
+        .addEventListener('click', function() {
+           var textos = document.querySelector('.textos')
+            if(textos.classList.contains('mostrar')) {
+                textos.classList.remove('mostrar');
+            } else {
+                textos.classList.add('mostrar');
+            }
+
+        });
+
     </script>
 </body>
 </html>
