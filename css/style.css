@@ -154,7 +154,7 @@ footer{
     top: -12px;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 500px) {
     .hero2{
         flex-direction: column;
 
@@ -208,7 +208,7 @@ header nav ul li a{
 }
 
 .mostrar{
-    height: 500px !important;
+    height: 920px !important;
     transition: height 0.5s ease-in-out;
     
 }
