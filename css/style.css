@@ -22,7 +22,7 @@ body{
 }
 
 header{
-    background-color: #333;
+    background-color: #3333338e;
     color: #ffffff;
     width: 100%;
     height: 65px;
@@ -67,7 +67,7 @@ header nav ul li a:hover{
     margin-top: 3%;
     overflow: hidden;
     padding: 20px 0;
-    height: 55vh;
+    height: 75vh;
     background-image: url('../src/bg.jpg');
     background-size: cover;
     background-position: center;
@@ -75,11 +75,13 @@ header nav ul li a:hover{
 }
 
 .hero{
-    background: #e2e2e277;
+    background-color: rgba(30, 30, 30, 10%);
+    backdrop-filter: blur(20px);
     border: solid 4px #00000029;
     width: 90%;
     padding: 30px;
     margin-left: 5%;
+    margin-top: 150px;
     text-align: center;
 }
 
@@ -99,9 +101,8 @@ footer{
     color: #ffffff;
     text-align: center;
     padding: 10px 0;
-    margin-top: 20px;
-    position: relative;
-    bottom: -113px;
+    margin-top: 5px;
+    bottom: 0;
 }
 
 .container2{
@@ -140,7 +141,8 @@ footer{
 
 .hero2 .textos{
     width: 60%;
-    background-color: #333333ab;
+    background-color: rgba(30, 30, 30, 10%);
+    backdrop-filter: blur(20px);
     padding: 20px;
 }
 
@@ -166,7 +168,7 @@ footer{
     }
     
     header{
-    background-color: #333;
+    background-color: #3333338e;
     color: #ffffff;
     width: 100%;
     height: 95px;
@@ -181,7 +183,7 @@ header h1{
 header nav{
     position: relative;
     top: -1rem;
-    left: -3rem;
+    left: -9rem;
 }
 
 header nav ul{
@@ -198,9 +200,21 @@ header nav ul li a{
     font-weight: bold;
 }
 
+footer{
+    background-color: rgba(30, 30, 30, 10%);
+    backdrop-filter: blur(20px);
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 110px;
+    bottom: 0;
+}
+
+
 .hero2 .textos{
     width: 100%;
-    background-color: #333333ab;
+    background-color: rgba(30, 30, 30, 10%);
+    backdrop-filter: blur(20px);
     padding: 10px;
     overflow: hidden;
     height: 0;
@@ -232,7 +246,8 @@ footer.f2{
 }
 
 .hero{
-    background: #e2e2e277;
+     background-color: rgba(30, 30, 30, 10%);
+    backdrop-filter: blur(20px);
     border: solid 4px #00000029;
     width: 98%;
     padding: 30px;
