@@ -11,12 +11,10 @@ body{
     background-color: #333030;
     color: #f0f0f0;
     line-height: 1.6;
-    /* Configurações de fundo para cobrir todo o conteúdo, sem corte */
     background-image: url('../src/bgg.png'); 
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    /* Altura removida para o body expandir com o conteúdo */
 }
 
 /* UTILITÁRIO */
@@ -34,7 +32,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed; /* Fixar o cabeçalho no topo */
+    position: fixed; 
     top: 0;
     z-index: 1000;
 }
@@ -68,7 +66,7 @@ header nav ul li a:hover{
     width: 85%;
     max-width: 1200px;
     margin: 0 auto;
-    margin-top: 100px; /* Espaço para o header fixo */
+    margin-top: 100px;
     overflow: hidden;
     padding: 20px 0;
     height: 75vh;
@@ -107,7 +105,7 @@ header nav ul li a:hover{
 
 /* ESTILOS DA SEÇÃO SOBRE (.container-sobre) */
 #sobre {
-    padding-top: 80px; /* Padding para compensar o header fixo */
+    padding-top: 80px; 
     background-color: #21212190;
     margin-top: 30px;
 }
@@ -158,7 +156,7 @@ header nav ul li a:hover{
     margin-bottom: 15px;
 }
 
-/* --- ESTILOS DO CARROSSEL INFINITO (CORRIGIDO) --- */
+/* --- ESTILOS DO CARROSSEL INFINITO (CORREÇÃO DEFINITIVA) --- */
 .tech-stack-section {
     padding: 40px 0;
     margin-top: 30px;
@@ -180,18 +178,21 @@ header nav ul li a:hover{
     white-space: nowrap; 
 }
 
+/* ✨ CORREÇÃO CRÍTICA DO DESKTOP AQUI ✨ */
 .scroller-inner {
     display: flex;
     gap: 40px;
     padding: 10px 0;
-    /* Usamos min-content para pegar a largura exata dos 2 conjuntos de ícones */
-    width: min-content; 
+    
+    /* 🚀 CORREÇÃO PRINCIPAL: Valor grande e fixo garante que o conteúdo duplicado
+       esteja em uma única linha e que o cálculo de 50% seja consistente. */
+    width: 2000px; 
     
     animation: scroll 30s linear infinite; 
 }
 
 .scroller-inner img {
-    width: 70px; /* Tamanho de ícone ideal no Desktop */
+    width: 70px;
     height: 70px;
     flex-shrink: 0; 
     opacity: 0.8;
@@ -203,17 +204,13 @@ header nav ul li a:hover{
     transform: scale(1.1);
 }
 
-/* DEFINIÇÃO DA ANIMAÇÃO (CORREÇÃO DE DESKTOP) */
-/* DEFINIÇÃO DA ANIMAÇÃO (FORA DA MEDIA QUERY) */
+/* DEFINIÇÃO DA ANIMAÇÃO */
 @keyframes scroll {
     from {
         transform: translateX(0);
     }
-    /* 🚀 SOLUÇÃO FINAL: Mover exatamente 50% da largura total do elemento.
-       Como a largura é min-content (duas listas), mover -50% garante o loop perfeito.
-       Se a animação iniciar na metade, é um erro de cache ou de como o navegador
-       está calculando o ponto inicial. 
-    */
+    /* Com a largura fixa em 2000px, -50% move exatamente 1000px, 
+       criando o loop perfeito. */
     to {
         transform: translateX(-50%); 
     }
@@ -287,7 +284,7 @@ footer{
     .hero-sobre .textos{
         width: 100%;
         overflow: hidden;
-        height: 120px; /* Altura inicial */
+        height: 120px; 
         cursor: pointer;
         padding: 10px;
         border: 1px solid rgba(255, 255, 255, 0.1);
@@ -295,22 +292,21 @@ footer{
         transition: height 0.5s ease-in-out;
     }
     
-    /* Estado "mostrar" acionado pelo JS */
     .textos.mostrar{
-        height: 800px; /* Altura que garanta a visualização de todo o texto */
+        height: 800px; 
     }
 
-    /* --- AJUSTES DO CARROSSEL PARA MOBILE (Perfeito) --- */
+    /* --- AJUSTES DO CARROSSEL PARA MOBILE (MANUTENÇÃO) --- */
     .scroller-inner {
         animation-duration: 40s; 
         gap: 20px;
-        width: 350%; /* Largura maior para garantir o loop no mobile */
+        /* Manter 350% para mobile, que funcionou */
+        width: 350%; 
     }
     .scroller-inner img {
         width: 40px;
         height: 40px;
     }
-    /* A animação é herdada, mas funciona bem com a largura ajustada (350%) */
     
     footer{
         margin-top: 10px;
