@@ -247,13 +247,13 @@ footer{
     }
 }
 
-/* ESTILOS DA SEÇÃO DE TECNOLOGIAS (CÓDIGO AJUSTADO) */
+/* --- Estilos da Seção de Tecnologias --- */
 .tech-stack-section {
     padding: 40px 0;
     margin-top: 30px;
     background-color: rgba(0, 0, 0, 0.4);
     text-align: center;
-    overflow: hidden; 
+    overflow: hidden; /* Garante que o conteúdo rolante extra fique escondido */
 }
 
 .tech-stack-section h3 {
@@ -270,19 +270,27 @@ footer{
     white-space: nowrap; 
 }
 
-/* ONDE A ANIMAÇÃO OCORRE */
+/* ONDE A ANIMAÇÃO OCORRE - CORREÇÃO CRÍTICA */
 .scroller-inner {
     display: flex;
     gap: 40px;
     padding: 10px 0;
+    
+    /* 💥 CORREÇÃO PRINCIPAL: 
+       Define uma largura muito grande (ou 'min-content') para garantir que 
+       a soma de todos os ícones + espaços caiba no contêiner antes de começar a rolar.
+       Usamos min-content para que a largura seja exatamente o mínimo necessário.
+    */
+    width: min-content; 
+    
     /* Aplica a animação: nome, duração, tipo, repetição */
     animation: scroll 30s linear infinite; 
 }
 
 .scroller-inner img {
-    /* ✨ TAMANHO REDUZIDO AQUI (50px) ✨ */
-    width: 50px; 
-    height: 50px;
+    /* ✨ TAMANHO AJUSTADO PARA DESKTOP (80px) ✨ */
+    width: 80px; 
+    height: 80px;
     flex-shrink: 0; 
     opacity: 0.8;
     transition: opacity 0.3s;
@@ -295,6 +303,7 @@ footer{
 
 /* DEFINIÇÃO DA ANIMAÇÃO */
 @keyframes scroll {
+    /* O 'to' continua sendo -50% para compensar a duplicação dos ícones no HTML */
     from {
         transform: translateX(0);
     }
@@ -310,9 +319,10 @@ footer{
         gap: 20px;
     }
     .scroller-inner img {
-        /* ✨ TAMANHO REDUZIDO PARA MOBILE (35px) ✨ */
-        width: 35px;
-        height: 35px;
+        /* Tamanho para Mobile (50px) */
+        width: 50px;
+        height: 50px;
     }
 }
+
 
