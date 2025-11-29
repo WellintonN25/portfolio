@@ -204,13 +204,18 @@ header nav ul li a:hover{
 }
 
 /* DEFINIÇÃO DA ANIMAÇÃO (CORREÇÃO DE DESKTOP) */
+/* DEFINIÇÃO DA ANIMAÇÃO (FORA DA MEDIA QUERY) */
 @keyframes scroll {
     from {
         transform: translateX(0);
     }
-    /* Move pela largura da viewport (mais robusto para reset) */
+    /* 🚀 SOLUÇÃO FINAL: Mover exatamente 50% da largura total do elemento.
+       Como a largura é min-content (duas listas), mover -50% garante o loop perfeito.
+       Se a animação iniciar na metade, é um erro de cache ou de como o navegador
+       está calculando o ponto inicial. 
+    */
     to {
-        transform: translateX(-100vw); 
+        transform: translateX(-50%); 
     }
 }
 
