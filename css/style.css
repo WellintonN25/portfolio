@@ -253,7 +253,7 @@ footer{
     margin-top: 30px;
     background-color: rgba(0, 0, 0, 0.4);
     text-align: center;
-    overflow: hidden; /* Garante que o conteúdo rolante extra fique escondido */
+    overflow: hidden; /* CRÍTICO: Esconde o conteúdo que está fora da tela */
 }
 
 .tech-stack-section h3 {
@@ -270,28 +270,28 @@ footer{
     white-space: nowrap; 
 }
 
-/* ONDE A ANIMAÇÃO OCORRE - CORREÇÃO CRÍTICA */
+/* ONDE A ANIMAÇÃO OCORRE - CORREÇÃO FINAL DE LAYOUT */
 .scroller-inner {
     display: flex;
     gap: 40px;
     padding: 10px 0;
     
-    /* 💥 CORREÇÃO PRINCIPAL: 
-       Define uma largura muito grande (ou 'min-content') para garantir que 
-       a soma de todos os ícones + espaços caiba no contêiner antes de começar a rolar.
-       Usamos min-content para que a largura seja exatamente o mínimo necessário.
+    /* 🚀 CORREÇÃO 1: Largura ajustada.
+       Em vez de 'min-content' (que pode ter inconsistências), usamos uma largura que
+       sabemos ser grande o suficiente para a repetição. 
+       Aqui, 250% garante que o conteúdo dobre a largura da tela.
     */
-    width: min-content; 
+    width: 250%; 
     
     /* Aplica a animação: nome, duração, tipo, repetição */
     animation: scroll 30s linear infinite; 
 }
 
 .scroller-inner img {
-    /* ✨ TAMANHO AJUSTADO PARA DESKTOP (80px) ✨ */
-    width: 80px; 
-    height: 80px;
-    flex-shrink: 0; 
+    /* ✨ TAMANHO IDEAL PARA DESKTOP (70px) ✨ */
+    width: 70px; 
+    height: 70px;
+    flex-shrink: 0; /* Impede que o item encolha */
     opacity: 0.8;
     transition: opacity 0.3s;
 }
@@ -303,10 +303,11 @@ footer{
 
 /* DEFINIÇÃO DA ANIMAÇÃO */
 @keyframes scroll {
-    /* O 'to' continua sendo -50% para compensar a duplicação dos ícones no HTML */
+    /* CORREÇÃO 2: Garantindo que o movimento seja o suficiente para o loop */
     from {
         transform: translateX(0);
     }
+    /* Move o conteúdo em -50% da largura total (250%), o que garante o loop. */
     to {
         transform: translateX(-50%);
     }
@@ -315,14 +316,28 @@ footer{
 /* AJUSTE PARA MOBILE: Velocidade mais lenta e ÍCONES MENORES */
 @media screen and (max-width: 768px) {
     .scroller-inner {
-        animation-duration: 40s; 
+        animation-duration: 40s; /* Mais lenta no mobile */
         gap: 20px;
+        /* Reduz a largura total no mobile para um movimento mais coeso */
+        width: 350%; 
     }
     .scroller-inner img {
-        /* Tamanho para Mobile (50px) */
-        width: 50px;
-        height: 50px;
+        /* ✨ TAMANHO ADEQUADO PARA MOBILE (40px) ✨ */
+        width: 40px;
+        height: 40px;
+    }
+    /* Velocidade da animação pode ser redefinida se necessário */
+    @keyframes scroll {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            /* O percentual de movimento no mobile será menor, 
+               já que o width total está maior (350%) */
+            transform: translateX(-50%);
+        }
     }
 }
+
 
 
