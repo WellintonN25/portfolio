@@ -1,269 +1,248 @@
+/* RESET PADRÃO */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ESTILOS GERAIS DO BODY */
 body{
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #333030a1;
-    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #333030;
+    color: #f0f0f0; /* Cor de texto padrão clara */
     line-height: 1.6;
-    background-image: url('../src/bgg.png');
+    /* Usei apenas a imagem de fundo principal aqui */
+    background-image: url('../src/bgg.png'); 
     background-size: cover;
+    background-attachment: fixed; /* Deixa o fundo fixo ao rolar */
     background-position: center;
-    background-size: 100% 100% ;
-    background-repeat: no-repeat;
-    height: 100vh;
 }
 
+/* UTILITÁRIO */
 .clear{
     clear: both;
 }
 
+/* ESTILOS DO HEADER/NAVBAR */
 header{
-    background-color: #3333338e;
+    background-color: rgba(51, 51, 51, 0.9); /* Fundo mais escuro e opaco */
     color: #ffffff;
     width: 100%;
     height: 65px;
-    padding: 10px 0;
+    padding: 10px 20px;
+    display: flex; /* Uso de Flexbox para alinhamento */
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Fixar o cabeçalho no topo */
+    top: 0;
+    z-index: 1000;
 }
 
-header h1{
-    float: left;
-    margin-left: 20px;
+header .logo{
+    font-size: 28px;
     cursor: pointer;
-}
-
-header nav{
-    float: right;
-    margin-top: 20px;
+    margin: 0;
 }
 
 header nav ul{
     list-style: none;
-}
-
-header nav ul li{
-    display: inline;
-    margin-left: 20px;
-    margin-right: 10px;
-    gap: 15px;
+    display: flex; /* Alinhar links lado a lado */
+    gap: 20px;
 }
 
 header nav ul li a{
     color: #ffffff;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
+    transition: color 0.3s, text-decoration 0.3s;
 }
 
 header nav ul li a:hover{
+    color: #00bcd4; /* Um toque de cor de destaque */
     text-decoration: underline;
 }
 
+/* ESTILOS DA SEÇÃO HOME (.container) */
 .container{
-    width: 80%;
-    margin: auto;
-    margin-top: 3%;
+    width: 85%; /* Um pouco mais largo */
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 100px; /* Espaço para o header fixo */
     overflow: hidden;
     padding: 20px 0;
     height: 75vh;
+    /* Imagem de fundo da home agora está dentro do .container */
     background-image: url('../src/bg.jpg');
     background-size: cover;
     background-position: center;
-    background-size: 100% 100% ;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
 }
 
 .hero{
-    background-color: rgba(30, 30, 30, 10%);
-    backdrop-filter: blur(20px);
-    border: solid 4px #00000029;
+    /* Usei um background mais escuro e mais borrado para destacar o texto */
+    background-color: rgba(10, 10, 10, 0.3);
+    backdrop-filter: blur(8px);
+    border: solid 2px rgba(255, 255, 255, 0.2);
     width: 90%;
-    padding: 30px;
-    margin-left: 5%;
-    margin-top: 150px;
+    max-width: 600px;
+    padding: 40px;
     text-align: center;
+    border-radius: 10px;
 }
 
 .hero h2{
-    font-size: 40px;
-    margin-bottom: 10px;
-    color: white;
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .hero p{
     font-size: 20px;
-    color: white;
+    color: #ccc;
 }
 
-footer{
-    background-color: #33333383;
-    color: #ffffff;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 5px;
-    bottom: 0;
+/* ESTILOS DA SEÇÃO SOBRE (.container-sobre) */
+#sobre {
+    padding-top: 80px; /* Padding para compensar o header fixo */
+    background-color: #21212190; /* Fundo levemente escuro para a seção */
+    margin-top: 30px;
 }
 
-.container2{
-    width: 80%;
+.container-sobre{
+    width: 85%;
+    max-width: 1200px;
     margin: auto;
-    margin-top: 1.8%;
     overflow: hidden;
     padding: 20px 0;
 }
 
-.hero2{
+.hero-sobre{
     display: flex;
-    gap: 4%;
+    gap: 40px;
+    padding: 30px;
+    background-color: rgba(10, 10, 10, 0.3);
+    backdrop-filter: blur(8px);
+    border-radius: 10px;
+    border: solid 2px rgba(255, 255, 255, 0.1);
 }
 
-.hero2 img{
-    width: 350px;
-    height: 450px;
-    border: solid 4px #00000029;
+.hero-sobre img{
+    width: 300px;
+    height: 400px;
+    object-fit: cover; /* Garante que a imagem preencha sem distorcer */
+    border-radius: 8px;
+    border: solid 4px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-.hero2 h3{
-    font-size: 30px;
-    margin-bottom: 10px;
-    text-align: center;
-    color: white;
-    float: left;
+.hero-sobre .textos{
+    flex-grow: 1; /* Permite que o texto ocupe o espaço restante */
+    padding: 0;
 }
 
-.hero2 p{
-    font-size: 15px;
-    color: white;
+.hero-sobre h3{
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #00bcd4;
+    text-align: left;
+}
+
+.hero-sobre p{
+    font-size: 16px;
+    color: #f0f0f0;
     text-align: justify;
-    float: right;
+    margin-bottom: 15px;
 }
 
-.hero2 .textos{
-    width: 60%;
-    background-color: rgba(30, 30, 30, 10%);
-    backdrop-filter: blur(20px);
-    padding: 20px;
-}
-
-.f2{
-    background-color: #33333383;
+/* ESTILOS DO FOOTER */
+footer{
+    background-color: rgba(51, 51, 51, 0.9);
     color: #ffffff;
     text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
-    position: relative;
-    top: -12px;
+    padding: 15px 0;
+    margin-top: 30px;
 }
 
-@media screen and (max-width: 516px) {
-    .hero2{
+/* MEDIA QUERY PARA RESPONSIVIDADE EM TELAS PEQUENAS (Max 768px - Tablet e Mobile) */
+@media screen and (max-width: 768px) {
+    
+    header {
+        height: auto;
         flex-direction: column;
-
+        padding: 10px;
     }
 
-    .hero2 img{
+    header nav {
+        margin-top: 10px;
+    }
+
+    header nav ul {
+        gap: 10px;
+        padding: 0;
+    }
+
+    /* Ajuste para o Hero */
+    .container {
+        width: 100%;
+        height: 60vh;
+        margin-top: 120px; /* Mais espaço para o header maior */
+    }
+
+    .hero {
+        width: 95%;
+        padding: 20px;
+        margin: 0 auto;
+    }
+
+    .hero h2 {
+        font-size: 24px;
+    }
+    
+    /* Ajuste para a seção Sobre Mim */
+    .container-sobre{
+        width: 95%;
+    }
+
+    .hero-sobre{
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .hero-sobre img{
         width: 100%;
         height: auto;
+        max-height: 400px;
+        margin: 0 auto;
+    }
+
+    .hero-sobre h3 {
+        text-align: center;
     }
     
-    header{
-    background-color: #3333338e;
-    color: #ffffff;
-    width: 100%;
-    height: 95px;
-    padding: 10px 0;
-}
-
-header h1{
-    margin-left: 32%;
-    cursor: pointer;
-}
-
-header nav{
-    position: relative;
-    top: -1rem;
-    left: -9rem;
-}
-
-header nav ul{
-    list-style: none;
-}
-
-header nav ul li{
-    margin-right: 5px;
-}
-
-header nav ul li a{
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-footer{
-    background-color: rgba(30, 30, 30, 10%);
-    backdrop-filter: blur(20px);
-    color: #ffffff;
-    text-align: center;
-    padding: 10px 0;
-    margin-top: 110px;
-    bottom: 0;
-}
-
-
-.hero2 .textos{
-    width: 100%;
-    background-color: rgba(30, 30, 30, 10%);
-    backdrop-filter: blur(20px);
-    padding: 10px;
-    overflow: hidden;
-    height: 0;
-    cursor: pointer;
-}
-
-.mostrar{
-    height: 920px !important;
-    transition: height 0.5s ease-in-out;
+    /* Estilos do toggle para a seção de texto no mobile */
+    .hero-sobre .textos{
+        width: 100%;
+        overflow: hidden;
+        height: 120px; /* Altura inicial no mobile */
+        cursor: pointer;
+        padding: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+        transition: height 0.5s ease-in-out;
+    }
     
-}
+    /* Estado "mostrar" acionado pelo JS */
+    .textos.mostrar{
+        height: 800px; /* Altura que garanta a visualização de todo o texto */
+    }
 
-footer.f2{
-    position: relative;
-    top: 78px;
-}
-
-.container{
-    width: 100%;
-    margin: auto;
-    margin-top: 3%;
-    overflow: hidden;
-    padding: 20px 0;
-    height: 55vh;
-    background-image: url('../src/bg.jpg');
-    background-size: cover;
-    background-position: center;
-    background-size: 100% 100% ;
-}
-
-.hero{
-     background-color: rgba(30, 30, 30, 10%);
-    backdrop-filter: blur(20px);
-    border: solid 4px #00000029;
-    width: 98%;
-    padding: 30px;
-    margin-left: 1%;
-    text-align: center;
-}
-
-.hero h2{
-    font-size: 20px;
-    margin-bottom: 10px;
-    color: white;
-}
-
-.hero p{
-    font-size: 20px;
-    color: white;
-}
-    
+    footer{
+        margin-top: 10px;
+    }
 }
