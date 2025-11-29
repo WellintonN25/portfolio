@@ -3,33 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Wellinton</title>
+    <link rel="stylesheet" href="css/main.css">
+    <title>Wellinton Oliveira - Desenvolvedor</title>
 </head>
+
 <body>
+
     <header>
-        <h1>Oliveira</h1>
+        <h1 class="logo">Oliveira</h1>
 
         <nav>
             <ul>
-                <li><a href="sobre.html">sobre</a></li>
-                <li><a href="https://github.com/WellintonN25">GitHub</a></li>
-                <li><a href="https://www.linkedin.com/in/wellinton-oliveira-a630a138b/">Linkedin</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="https://github.com/WellintonN25" target="_blank">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/wellinton-oliveira-a630a138b/" target="_blank">Linkedin</a></li>
             </ul>
         </nav>
-
     </header>
-    <div class="container">
-      <section class="hero">
+
+    <main class="container">
+        <section class="hero">
             <h2>Bem-vindo ao meu site pessoal!</h2>
             <p>Descubra mais sobre mim, meus projetos e meu trabalho.</p>
         </section>
-    </div><!--container-->
+    </main>
+    
+    <div class="clear"></div>
+
+    <section id="sobre" class="container-sobre">
+        <div class="hero-sobre">
+            <img src="src/pf.jpg" alt="Foto de Perfil de Wellinton Oliveira">
+            <div class="textos">
+                <h3>Wellinton Cardoso Nunes de Oliveira</h3>
+                <p>Me chamo Wellinton, sou estudante de ciência da computação, sempre fui apaixonado por tecnologia. Há poucos meses, descobri minha área de foco: a programação. É nesta área que estou me encontrando de verdade, e apesar dos desafios técnicos, estou progredindo bem.</p>
+                <p>Já domino a linguagem de marcação **HTML** e as Folhas de Estilo em Cascata (**CSS**). Absorvi os conhecimentos necessários de lógica de programação e agora estou aprofundando em **JavaScript**, fazendo manipulações em DOM, estruturas de repetição e condicionais.</p>
+                <p>Também fiz um curso sobre **Git e GitHub** para versionamento de código e experimentei um pouco de **React e Vite** em um projeto de cardápio digital, vendo a complexidade e a beleza dessas manipulações. Após o JavaScript puro, planejo me aprofundar nesses frameworks. Iniciei também um curso de **SQL e SGBDs** para entender a tecnologia de banco de dados.</p>
+            </div></div>
+    </section>
 
     <div class="clear"></div>
-    
+
     <footer>
         <p>&copy; 2025 Wellinton Oliveira. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        document.querySelector('.logo')
+            .addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+        // Ocultar/Mostrar o texto na versão mobile (mantido e aprimorado)
+        document.querySelector('.textos').addEventListener('click', function() {
+            this.classList.toggle('mostrar');
+        });
+    </script>
+
 </body>
 </html>
