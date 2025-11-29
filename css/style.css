@@ -246,3 +246,70 @@ footer{
         margin-top: 10px;
     }
 }
+
+/* ESTILOS DA SEÇÃO DE TECNOLOGIAS */
+.tech-stack-section {
+    padding: 40px 0;
+    margin-top: 30px;
+    background-color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    overflow: hidden; 
+}
+
+.tech-stack-section h3 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #00bcd4;
+    text-shadow: 1px 1px 2px #000;
+}
+
+/* CONTAINER PRINCIPAL DA ROLAGEM */
+.scroller {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap; 
+}
+
+/* ONDE A ANIMAÇÃO OCORRE */
+.scroller-inner {
+    display: flex;
+    gap: 40px;
+    padding: 10px 0;
+    /* Aplica a animação: nome, duração, tipo, repetição */
+    animation: scroll 30s linear infinite; 
+}
+
+.scroller-inner img {
+    width: 70px; /* Tamanho dos ícones */
+    height: 70px;
+    flex-shrink: 0; 
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.scroller-inner img:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* DEFINIÇÃO DA ANIMAÇÃO */
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* AJUSTE PARA MOBILE: Velocidade mais lenta para telas menores (opcional) */
+@media screen and (max-width: 768px) {
+    .scroller-inner {
+        animation-duration: 40s; 
+        gap: 20px;
+    }
+    .scroller-inner img {
+        width: 50px;
+        height: 50px;
+    }
+}
